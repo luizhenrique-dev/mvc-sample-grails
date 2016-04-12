@@ -20,7 +20,7 @@ class TimeController {
 
 	def save() {
 		def time = new Time(params)
-		if (time.save()) {
+		if (time.save(flush: true)) {
 			redirect(action: "show", id: time.id)
 		}
 		else {
@@ -32,7 +32,11 @@ class TimeController {
 
 	}
 
-	def show() {
-		def time = Time.get(params.id)
+	def show(Long id) {
+		def time = Time.get(id)
+		if (!time){
+			render "Esse time não existe"
+		}
+		[time: time]
 	}
 }

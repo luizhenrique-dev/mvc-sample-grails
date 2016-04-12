@@ -66,6 +66,14 @@
 			<g:field name="quantidadeGolsContra" type="number" required="" value="${time.quantidadeGolsContra}"/>
 		</div>
 
+		<div class="fieldcontain">
+			<label for="campeonato">
+				Campeonato
+				<span class="required-indicator">*</span>
+			</label>
+			<g:select id="campeonato" name="campeonato.id" from="${br.com.zg.treino.entity.Campeonato.list()}" optionKey="id" required="" value="${time?.campeonato?.id}" class="many-to-one"/>
+		</div>
+
 		<div>
 			<g:submitButton name="salvar" class="save" value="Salvar"/>
 		</div>

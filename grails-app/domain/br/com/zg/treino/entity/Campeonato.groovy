@@ -8,7 +8,13 @@ class Campeonato {
 	static hasMany = [timesParticipantes: Time]
 
 	static constraints = {
-		quantidadeDeRodadas nullable: true, blank: true, range: 1..38
+		quantidadeDeRodadas nullable: true, blank: true, min: 1
 		nome nullable: false, blank: false
+	}
+
+
+	@Override
+	public String toString() {
+		return nome
 	}
 }

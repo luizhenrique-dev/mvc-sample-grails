@@ -54,6 +54,8 @@
 
 	<p>Bem-vindo!</p>
 
+	<g:link controller="campeonato" action="create">Criar Campeonato</g:link>
+
 	<div id="controller-list" role="navigation">
 		<h2>Controllers disponíveis:</h2>
 		<ul>
