@@ -1,4 +1,6 @@
-package br.com.zg.treino.entity
+package br.com.zg.treino.controller
+
+import br.com.zg.treino.entity.Campeonato
 
 class CampeonatoController {
 
