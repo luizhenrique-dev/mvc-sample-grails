@@ -13,15 +13,17 @@
 </head>
 
 <body>
+<h1>Classificação do Campeonato</h1>
 <ul>
-	h1>Classificação do Campeonato</h1>
 	<g:each status="i" var="time" in="${timesOrdenadosClassificacao}">
-		<p>${i+1}
-		${time.nome}</p>
+		<p>${i + 1}
+			${time.nome}</p>
 	</g:each>
 </ul>
 
 <br/><br/>
 <a class="home" href="${createLink(uri: '/')}">Voltar ao início</a>
+<br/><br/>
+
 </body>
 </html>
