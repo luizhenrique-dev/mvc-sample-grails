@@ -11,7 +11,7 @@ class ClassificacaoController {
 			render "Esse campeonato não existe"
 		} else {
 			def timesOrdenadosClassificacao = classificacao2015Service.realizaClassificacao(campeonato)
-			[timesOrdenadosClassificacao: timesOrdenadosClassificacao]
+			render(view: "classificacao", model: [timesOrdenadosClassificacao: timesOrdenadosClassificacao])
 		}
 	}
 
@@ -35,10 +35,6 @@ class ClassificacaoController {
 		}
 	}
 
-	def obterTabelaCameponato() {
-
-	}
-
 	def menu(Long id) {
 		def campeonato = campeonatoService.buscarCampeonato(id)
 		if (!campeonato) {
@@ -47,10 +43,4 @@ class ClassificacaoController {
 			render(view: "menu", model: [campeonato: campeonato])
 		}
 	}
-
-	def escolhaCampeonato(){
-
-	}
-
-
 }

@@ -59,5 +59,7 @@
 
 <br/>
 <g:link controller="time" action="create">Adicionar Novo Time</g:link>
+<br/><br />
+<g:link controller="classificacao" id="${time.campeonato.id}" action="menu">Ir para menu do sistema</g:link>
 </body>
 </html>

@@ -47,23 +47,12 @@
 </head>
 
 <body>
-<a href="#page-body" class="skip"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-
 <div id="page-body" role="main">
 	<h1>Sistema de Realização de Campeonato de Futebol</h1>
 
 	<p>Bem-vindo!</p>
 
 	<g:link controller="campeonato" action="create">Criar Campeonato</g:link>
-
-	<div id="controller-list" role="navigation">
-		<h2>Controllers disponíveis:</h2>
-		<ul>
-			<g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName }}">
-				<li class="controller"><g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link></li>
-			</g:each>
-		</ul>
-	</div>
 </div>
 </body>
 </html>
