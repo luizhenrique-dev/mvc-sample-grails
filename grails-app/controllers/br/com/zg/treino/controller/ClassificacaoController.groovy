@@ -5,8 +5,8 @@ class ClassificacaoController {
 	def classificacao2015Service
 	def campeonatoService
 
-	def realizaClassificacao(Long idCampeonato) {
-		def campeonato = campeonatoService.buscarCampeonato(idCampeonato)
+	def realizaClassificacao(Long id) {
+		def campeonato = campeonatoService.buscarCampeonato(id)
 		if (!campeonato) {
 			render "Esse campeonato não existe"
 		} else {
@@ -15,27 +15,40 @@ class ClassificacaoController {
 		}
 	}
 
-	def obterTimeCampeao(Long idCampeonato) {
-		def campeonato = campeonatoService.buscarCampeonato(idCampeonato)
+	def obterTimeCampeao(Long id) {
+		def campeonato = campeonatoService.buscarCampeonato(id)
 		if (!campeonato) {
 			render "Esse campeonato não existe"
 		} else {
 			def timeCampeao = classificacao2015Service.obterTimeCampeao(campeonato)
-			[timeCampeao: timeCampeao]
+			render(view: "time_campeao", model: [timeCampeao: timeCampeao])
 		}
 	}
 
-	def obterTimeLanterna(Long idCampeonato) {
-		def campeonato = campeonatoService.buscarCampeonato(idCampeonato)
+	def obterTimeLanterna(Long id) {
+		def campeonato = campeonatoService.buscarCampeonato(id)
 		if (!campeonato) {
 			render "Esse campeonato não existe"
 		} else {
 			def timeLanterna = classificacao2015Service.obterTimeLanterna(campeonato)
-			[timeLanterna: timeLanterna]
+			render(view: "time_lanterna", model: [timeLanterna: timeLanterna])
 		}
 	}
 
 	def obterTabelaCameponato() {
+
+	}
+
+	def menu(Long id) {
+		def campeonato = campeonatoService.buscarCampeonato(id)
+		if (!campeonato) {
+			render "Esse campeonato não existe"
+		} else {
+			render(view: "menu", model: [campeonato: campeonato])
+		}
+	}
+
+	def escolhaCampeonato(){
 
 	}
 

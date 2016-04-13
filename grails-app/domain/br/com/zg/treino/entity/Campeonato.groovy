@@ -6,6 +6,7 @@ class Campeonato {
 	int quantidadeDeRodadas
 
 	static hasMany = [timesParticipantes: Time]
+	static fetchMode = [timesParticipantes: 'eager']
 
 	static constraints = {
 		quantidadeDeRodadas nullable: true, blank: true, min: 1

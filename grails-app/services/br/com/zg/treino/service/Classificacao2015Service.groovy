@@ -11,7 +11,7 @@ import br.com.zg.treino.service.interfaces.ClassificacaoService
 class Classificacao2015Service implements ClassificacaoService {
 
 	List<Time> realizaClassificacao(Campeonato campeonato) {
-		List<Time> timesOrdenadosMenorParaMaior = aplicaCriteriosDesempate(campeonato.timesParticipantes)
+		List<Time> timesOrdenadosMenorParaMaior = aplicaCriteriosDesempate(campeonato.timesParticipantes.collect())
 
 		return timesOrdenadosMenorParaMaior.reverse()
 	}
@@ -39,6 +39,7 @@ class Classificacao2015Service implements ClassificacaoService {
 	}
 
 	Time obterTimeCampeao(Campeonato campeonato) {
+		println(campeonato)
 		realizaClassificacao(campeonato).first()
 	}
 
