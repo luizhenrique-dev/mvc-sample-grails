@@ -2,6 +2,8 @@ package br.com.zg.treino.entity
 
 class TimeController {
 
+	def timeService
+
 	def index() {
 		redirect(action: "create", params: params)
 	}
@@ -33,7 +35,7 @@ class TimeController {
 	}
 
 	def show(Long id) {
-		def time = Time.get(id)
+		def time = timeService.buscarTime(id)
 		if (!time){
 			render "Esse time não existe"
 		}

@@ -2,6 +2,8 @@ package br.com.zg.treino.entity
 
 class CampeonatoController {
 
+	def campeonatoService
+
 	def index() {
 		redirect(action: "create", params: params)
 	}
@@ -21,7 +23,7 @@ class CampeonatoController {
 	}
 
 	def show(Long id) {
-		def campeonato = Campeonato.get(id)
+		def campeonato = campeonatoService.buscarCampeonato(id)
 		if (!campeonato){
 			render "Esse campeonato não existe"
 		}
