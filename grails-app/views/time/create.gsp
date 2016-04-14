@@ -71,7 +71,7 @@
 				Campeonato
 				<span class="required-indicator">*</span>
 			</label>
-			<g:select id="campeonato" name="campeonato.id" from="${br.com.zg.treino.entity.Campeonato.list()}" optionKey="id" required="" value="${time?.campeonato?.id}" class="many-to-one"/>
+			<g:select id="campeonato" name="campeonato.id" from="${listaCampeonatos}" optionKey="id" required="" value="${time?.campeonato?.id}" class="many-to-one"/>
 		</div>
 
 		<div>

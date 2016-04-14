@@ -1,8 +1,11 @@
 package br.com.zg.treino.service
 
 import br.com.zg.treino.entity.Campeonato
+import br.com.zg.treino.entity.Time
 
 class CampeonatoService {
+
+	def classificacao2015Service
 
 	Campeonato buscarCampeonato(id) {
 		def campeonato = Campeonato.get(id)
@@ -10,5 +13,19 @@ class CampeonatoService {
 			throw new Exception("Esse campeonato não existe", campeonato)
 		}
 		return campeonato
+	}
+
+	List<Time> realizaClassificacao(Campeonato campeonato) {
+		List<Time> timesOrdenadosMenorParaMaior = classificacao2015Service.aplicaCriteriosDesempate(campeonato.timesParticipantes.collect())
+		return timesOrdenadosMenorParaMaior.reverse()
+	}
+
+	Time obterTimeCampeao(Campeonato campeonato) {
+		println(campeonato)
+		realizaClassificacao(campeonato).first()
+	}
+
+	Time obterTimeLanterna(Campeonato campeonato) {
+		realizaClassificacao(campeonato).last()
 	}
 }

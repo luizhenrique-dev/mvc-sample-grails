@@ -11,7 +11,7 @@ class TimeController {
 	}
 
 	def create() {
-		[time: new Time(params)]
+		[time: new Time(params), listaCampeonatos : br.com.zg.treino.entity.Campeonato.list()]
 	}
 
 	def save() {
