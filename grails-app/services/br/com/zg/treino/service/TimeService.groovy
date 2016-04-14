@@ -11,4 +11,11 @@ class TimeService {
 		}
 		return time
 	}
+
+	boolean salvar(Time time) {
+		if (time.save(flush: true)) {
+			return true;
+		}
+		return false;
+	}
 }

@@ -16,7 +16,7 @@ class TimeController {
 
 	def save() {
 		def time = new Time(params)
-		if (time.save(flush: true)) {
+		if (timeService.salvar(time)) {
 			redirect(action: "show", id: time.id)
 		}
 		else {

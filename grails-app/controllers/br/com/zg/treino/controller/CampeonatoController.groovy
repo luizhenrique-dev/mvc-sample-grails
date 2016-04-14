@@ -12,7 +12,7 @@ class CampeonatoController {
 
 	def save() {
 		def campeonato = new Campeonato(params)
-		if(campeonato.save(flush: true)){
+		if(campeonatoService.salvar(campeonato)){
 			redirect(action: "show", id: campeonato.id)
 		}
 		else {

@@ -15,6 +15,13 @@ class CampeonatoService {
 		return campeonato
 	}
 
+	boolean salvar(Campeonato campeonato){
+		if(campeonato.save(flush: true)){
+			return true
+		}
+		return false
+	}
+
 	List<Time> realizaClassificacao(Campeonato campeonato) {
 		List<Time> timesOrdenadosMenorParaMaior = classificacao2015Service.aplicaCriteriosDesempate(campeonato.timesParticipantes.collect())
 		return timesOrdenadosMenorParaMaior.reverse()
